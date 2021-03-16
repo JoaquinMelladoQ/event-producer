@@ -22,7 +22,7 @@ class ConcertsController < ApplicationController
 
   # POST /concerts or /concerts.json
   def create
-    @concert = Concert.new(concert_params)
+    @concert = @band.concerts.build(concert_params)
 
     respond_to do |format|
       if @concert.save
@@ -69,6 +69,6 @@ class ConcertsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def concert_params
-      params.require(:concert).permit(:band_id, :attendance, :duration, :date)
+      params.require(:concert).permit(:attendance, :duration, :date)
     end
 end
