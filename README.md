@@ -6,9 +6,11 @@ Versions:
 
 Gems: Faker
 
-Git clone "remotepath" : "localname"
-cd "localname"
-bundle
+Git clone "remotepath" : "localname".
+
+cd "localname".
+
+bundle.
 
 1. Check gemfile
 2. Check routes
