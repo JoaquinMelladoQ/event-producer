@@ -20,5 +20,12 @@
   <%= @band.band_sort %>
 </p>
 
+<ul>
+  <li>
+    <p>Current month concerts: <%= @band.concerts.between_dates(Date.today.beginning_of_month, Date.today.end_of_month).size %></p>
+    <p></p>
+  </li>
+</ul>
+
 <%= link_to 'Edit', edit_band_path(@band) %> |
 <%= link_to 'Back', bands_path %>
