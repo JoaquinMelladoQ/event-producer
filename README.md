@@ -1,24 +1,16 @@
-# README
+## Event producer app
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Versions:
+1. Ruby 2.6.6
+2. Rails 5.2.4.5
 
-Things you may want to cover:
+Gems: Faker
 
-* Ruby version
+Git clone '<path>' : <localname>
+cd <localname>
+bundle
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+1. Check gemfile
+2. Check routes
+3. Check schema
+4. Models
