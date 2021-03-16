@@ -1,0 +1,37 @@
+<%= form_with(model: band, local: true) do |form| %>
+  <% if band.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(band.errors.count, "error") %> prohibited this band from being saved:</h2>
+
+      <ul>
+      <% band.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :members %>
+    <%= form.number_field :members %>
+  </div>
+
+  <div class="field">
+    <%= form.label :debut %>
+    <%= form.date_select :debut %>
+  </div>
+
+  <div class="field">
+    <%= form.label :band_sort %>
+    <%= form.number_field :band_sort %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
