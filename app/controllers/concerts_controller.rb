@@ -1,9 +1,10 @@
 class ConcertsController < ApplicationController
+  before_action :set_band
   before_action :set_concert, only: %i[ show edit update destroy ]
 
   # GET /concerts or /concerts.json
   def index
-    @concerts = Concert.all
+    @concerts = @band.concerts
   end
 
   # GET /concerts/1 or /concerts/1.json
@@ -12,7 +13,7 @@ class ConcertsController < ApplicationController
 
   # GET /concerts/new
   def new
-    @concert = Concert.new
+    @concert = @band.concerts.build
   end
 
   # GET /concerts/1/edit
@@ -60,6 +61,10 @@ class ConcertsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_concert
       @concert = Concert.find(params[:id])
+    end
+
+    def set_band
+      @band = Band.find(params[:band_id])
     end
 
     # Only allow a list of trusted parameters through.
