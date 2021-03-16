@@ -23,7 +23,9 @@
 <ul>
   <li>
     <p>Current month concerts: <%= @band.concerts.between_dates(Date.today.beginning_of_month, Date.today.end_of_month).size %></p>
-    <p></p>
+    <p>Max number of attendances: <%= @band.concerts.pluck(:attendance).max %></p>
+    <p>Max number of duration: <%= @band.concerts.maximum(:duration) %></p>
+    <p>Last concert date: <%= @band.concerts.maximum(:date).strftime("%Y-%B-%A") %></p>
   </li>
 </ul>
 
